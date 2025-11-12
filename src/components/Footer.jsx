@@ -3,16 +3,16 @@ import './Footer.css'
 function Footer({ language }) {
   const content = {
     en: {
-      title: 'Team Horay',
-      description: 'Crafting immersive indie games with passion and creativity',
-      links: ['Home', 'Games', 'Contact', 'Follow Us'],
-      copyright: '© 2024 Team Horay. All rights reserved.'
+      title: 'Dotori Doguldan',
+      description: 'Crafting immersive indie games with passion.',
+      links: ['Home', 'Games', 'Contact'],
+      copyright: '© 2025 Dotori Doguldan. All rights reserved.'
     },
     ko: {
-      title: 'Team Horay',
-      description: '열정과 창의력으로 만드는 인디 게임',
-      links: ['홈', '게임', '문의', '팔로우'],
-      copyright: '© 2024 Team Horay. 모든 권리 보유.'
+      title: '도토리 도굴단',
+      description: '열정으로 만드는 인디 게임',
+      links: ['홈', '게임', '문의'],
+      copyright: '© 2025 Dotori Doguldan. All rights reserved.'
     }
   }
 
@@ -36,9 +36,9 @@ function Footer({ language }) {
         </div>
 
         <div className="footer-section">
-          <h4 className="footer-heading">{language === 'en' ? 'Connect' : '연결'}</h4>
+          <h4 className="footer-heading">{language === 'en' ? 'Media' : '미디어'}</h4>
           <div className="social-links">
-            <a href="#" className="social-link">Twitter</a>
+            <a href="#" className="social-link">Instagram</a>
             <a href="#" className="social-link">Discord</a>
             <a href="#" className="social-link">YouTube</a>
           </div>

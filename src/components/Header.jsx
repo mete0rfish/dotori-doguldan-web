@@ -10,7 +10,7 @@ function Header({ language, onLanguageToggle }) {
     <header className="header">
       <div className="header-container">
         <div className="logo">
-          <span className="logo-text">TEAM HORAY</span>
+          <span className="logo-text">Dotori Doguldan</span>
         </div>
 
         <nav className="nav">
