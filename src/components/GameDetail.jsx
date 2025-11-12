@@ -76,6 +76,16 @@ function GameDetail({ games, language, onLanguageToggle }) {
 
         <div className="game-detail-content">
           <div className="game-detail-main">
+            {/* 플랫폼 섹션 */}
+            <section className="game-detail-section">
+              <h3 className="section-title">{t.platforms}</h3>
+              <div className="game-detail-platforms">
+                {game.platforms.map((platform, index) => (
+                  <span key={index} className="platform-tag-large">{platform}</span>
+                ))}
+              </div>
+            </section>
+
             {/* 소개 섹션 */}
             {introduction && (
               <section className="game-detail-section">
@@ -131,16 +141,6 @@ function GameDetail({ games, language, onLanguageToggle }) {
                 </div>
               </section>
             )}
-
-            {/* 플랫폼 섹션 */}
-            <section className="game-detail-section">
-              <h3 className="section-title">{t.platforms}</h3>
-              <div className="game-detail-platforms">
-                {game.platforms.map((platform, index) => (
-                  <span key={index} className="platform-tag-large">{platform}</span>
-                ))}
-              </div>
-            </section>
           </div>
         </div>
       </div>

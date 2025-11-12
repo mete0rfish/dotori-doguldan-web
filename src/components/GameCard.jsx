@@ -16,6 +16,10 @@ function GameCard({ game, language }) {
 
   const handleButtonClick = () => {
     navigate(`/game/${game.id}`)
+    // 페이지 이동 후 최상단으로 스크롤
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }, 100)
   }
 
   return (
@@ -38,13 +42,28 @@ function GameCard({ game, language }) {
           ))}
         </div>
 
-        <button 
-          className={`game-button ${isHovered ? 'active' : ''}`}
-          onClick={handleButtonClick}
-        >
-          {text[language]}
-          <span className="button-arrow">→</span>
-        </button>
+        <div className="game-buttons">
+          <button 
+            className={`game-button ${isHovered ? 'active' : ''}`}
+            onClick={handleButtonClick}
+          >
+            {text[language]}
+            <span className="button-arrow">→</span>
+          </button>
+          
+          {game.platforms.includes('Steam') && (
+            <button 
+              className="steam-button"
+              onClick={() => {
+                if (game.steamUrl) {
+                  window.open(game.steamUrl, '_blank')
+                }
+              }}
+            >
+              Steam
+            </button>
+          )}
+        </div>
       </div>
 
       <div className="game-accent"></div>
