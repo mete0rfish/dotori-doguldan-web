@@ -1,0 +1,373 @@
+.game-detail {
+  min-height: 100vh;
+}
+
+.game-detail-hero {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  min-height: 500px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 60px;
+}
+
+.game-detail-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(10, 10, 10, 0.8) 0%, rgba(10, 10, 10, 0.4) 100%);
+  z-index: 1;
+}
+
+.game-detail-hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  margin-bottom: 40px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: rgba(250, 152, 58, 0.2);
+  border: 1px solid rgba(250, 152, 58, 0.4);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.back-button:hover {
+  background-color: rgba(250, 152, 58, 0.3);
+  transform: translateX(-4px);
+}
+
+.game-detail-logo {
+  font-size: 64px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  color: #fa983a;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.game-detail-title {
+  font-size: 48px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+
+.game-detail-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 60px;
+}
+
+.game-detail-main {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.game-detail-section {
+  width: 100%;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #fa983a;
+  margin-bottom: 24px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.game-detail-description {
+  font-size: 18px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 0.3px;
+}
+
+.game-detail-platforms {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.platform-tag-large {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 12px 24px;
+  background-color: rgba(250, 152, 58, 0.2);
+  color: #fa983a;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 1px solid rgba(250, 152, 58, 0.4);
+}
+
+/* Features List */
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.feature-item {
+  font-size: 18px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 0.3px;
+  padding-left: 32px;
+  position: relative;
+}
+
+.feature-item::before {
+  content: '▶';
+  position: absolute;
+  left: 0;
+  color: #fa983a;
+  font-size: 14px;
+}
+
+/* Trailer Container */
+.trailer-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.trailer-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Screenshots Grid */
+.screenshots-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.screenshot-item {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.screenshot-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(250, 152, 58, 0.3);
+}
+
+.screenshot-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.game-detail-not-found {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 60px;
+}
+
+.game-detail-not-found h2 {
+  font-size: 32px;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.game-detail-not-found button {
+  padding: 14px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #0a0a0a;
+  background-color: #fa983a;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.game-detail-not-found button:hover {
+  background-color: #f88a1e;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(250, 152, 58, 0.4);
+}
+
+@media (max-width: 1024px) {
+  .game-detail-hero {
+    height: 50vh;
+    min-height: 400px;
+    padding: 40px;
+  }
+
+  .game-detail-logo {
+    font-size: 48px;
+  }
+
+  .game-detail-title {
+    font-size: 36px;
+  }
+
+  .game-detail-content {
+    padding: 60px 40px;
+  }
+
+  .section-title {
+    font-size: 28px;
+  }
+
+  .game-detail-description {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .game-detail-hero {
+    height: 40vh;
+    min-height: 300px;
+    padding: 32px 24px;
+  }
+
+  .back-button {
+    padding: 10px 20px;
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+
+  .game-detail-logo {
+    font-size: 36px;
+    letter-spacing: 2px;
+  }
+
+  .game-detail-title {
+    font-size: 28px;
+  }
+
+  .game-detail-content {
+    padding: 40px 24px;
+  }
+
+  .game-detail-main {
+    gap: 40px;
+  }
+
+  .section-title {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+
+  .game-detail-description {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .platform-tag-large {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+
+  .features-list {
+    gap: 12px;
+  }
+
+  .feature-item {
+    font-size: 15px;
+    padding-left: 24px;
+  }
+
+  .screenshots-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .game-detail-hero {
+    height: 35vh;
+    min-height: 250px;
+    padding: 24px 16px;
+  }
+
+  .game-detail-logo {
+    font-size: 28px;
+    letter-spacing: 1px;
+  }
+
+  .game-detail-title {
+    font-size: 22px;
+  }
+
+  .game-detail-content {
+    padding: 32px 16px;
+  }
+
+  .section-title {
+    font-size: 20px;
+  }
+
+  .game-detail-description {
+    font-size: 14px;
+  }
+
+  .platform-tag-large {
+    font-size: 12px;
+    padding: 8px 16px;
+  }
+
+  .feature-item {
+    font-size: 14px;
+    padding-left: 20px;
+  }
+
+  .screenshots-grid {
+    gap: 12px;
+  }
+}
+

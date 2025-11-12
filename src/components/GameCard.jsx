@@ -1,8 +1,10 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import './GameCard.css'
 
 function GameCard({ game, language }) {
   const [isHovered, setIsHovered] = useState(false)
+  const navigate = useNavigate()
 
   const text = {
     en: 'Learn More',
@@ -11,6 +13,10 @@ function GameCard({ game, language }) {
 
   const title = language === 'en' ? game.title : game.titleKo
   const description = language === 'en' ? game.description : game.descriptionKo
+
+  const handleButtonClick = () => {
+    navigate(`/game/${game.id}`)
+  }
 
   return (
     <div
@@ -32,7 +38,10 @@ function GameCard({ game, language }) {
           ))}
         </div>
 
-        <button className={`game-button ${isHovered ? 'active' : ''}`}>
+        <button 
+          className={`game-button ${isHovered ? 'active' : ''}`}
+          onClick={handleButtonClick}
+        >
           {text[language]}
           <span className="button-arrow">→</span>
         </button>
