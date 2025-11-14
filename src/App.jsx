@@ -33,7 +33,7 @@ function App() {
         }
       />
       <Route
-        path="/game/:id"
+        path="/game/:title"
         element={
           <GameDetail
             games={games}

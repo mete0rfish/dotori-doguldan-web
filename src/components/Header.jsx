@@ -25,7 +25,11 @@ function Header({ language, onLanguageToggle }) {
 
   const handleMenuClick = (index) => {
     if (index === 0) {
-      navigate('/')
+      if (location.pathname === '/') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        navigate('/');
+      }
     } else if (index === 1) {
       // 게임 버튼 클릭 시 메인 페이지로 이동 후 게임 섹션으로 스크롤
       if (location.pathname === '/') {

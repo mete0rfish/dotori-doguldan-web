@@ -4,6 +4,16 @@ import Header from './Header'
 import Footer from './Footer'
 import './GameDetail.css'
 
+// Helper function to create a URL-friendly slug from the title
+const slugifyTitle = (title) => {
+  return title
+    .toLowerCase()
+    .replace(/\s+/g, '-') // Replace spaces with hyphens
+    .replace(/[^a-z0-9-]/g, '') // Remove non-alphanumeric characters except hyphens
+    .replace(/--+/g, '-') // Replace multiple hyphens with a single hyphen
+    .replace(/^-+|-+$/g, ''); // Remove leading/trailing hyphens
+};
+
 function ScreenshotCarousel({ screenshots }) {
   const [currentIndex, setCurrentIndex] = useState(0)
 
@@ -50,16 +60,16 @@ function ScreenshotCarousel({ screenshots }) {
 }
 
 function GameDetail({ games, language, onLanguageToggle }) {
-  const { id } = useParams()
+  const { title: gameTitleSlug } = useParams() // Rename id to gameTitleSlug
   const navigate = useNavigate()
   const [game, setGame] = useState(null)
 
   useEffect(() => {
-    const foundGame = games.find(g => g.id === parseInt(id))
+    const foundGame = games.find(g => slugifyTitle(g.title) === gameTitleSlug) // Find by slugified title
     if (foundGame) {
       setGame(foundGame)
     }
-  }, [id, games])
+  }, [gameTitleSlug, games]) // Depend on gameTitleSlug
 
   if (!game) {
     return (
@@ -120,13 +130,7 @@ function GameDetail({ games, language, onLanguageToggle }) {
             <div className="game-detail-hero-main">
               <div className="game-detail-hero-left">
                 <h1 className="game-detail-logo">
-                  {game.logo.split('').map((char, index) => {
-                    return (
-                      <span key={index}>
-                        {char}
-                      </span>
-                    )
-                  })}
+                  {game.title}
                 </h1>
                 <h2 className="game-detail-title-ko">{game.titleKo}</h2>
               </div>

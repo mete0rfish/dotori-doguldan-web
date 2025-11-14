@@ -3,6 +3,16 @@ import { Link } from 'react-router-dom'
 import './ProjectPreview.css'
 import { games } from '../data/games'
 
+// Helper function to create a URL-friendly slug from the title
+const slugifyTitle = (title) => {
+  return title
+    .toLowerCase()
+    .replace(/\s+/g, '-') // Replace spaces with hyphens
+    .replace(/[^a-z0-9-]/g, '') // Remove non-alphanumeric characters except hyphens
+    .replace(/--+/g, '-') // Replace multiple hyphens with a single hyphen
+    .replace(/^-+|-+$/g, ''); // Remove leading/trailing hyphens
+};
+
 function ProjectPreview({ language }) {  
   const [currentIndex, setCurrentIndex] = useState(0)
   const wrapperRef = useRef(null)
@@ -69,7 +79,7 @@ function ProjectPreview({ language }) {
               const isActive = index === currentIndex;
 
               return (
-                <Link to={`/game/${game.id}`} key={game.id} className="carousel-item-link">
+                <Link to={`/game/${slugifyTitle(game.title)}`} key={game.id} className="carousel-item-link">
                   <div
                     ref={index === 0 ? itemRef : null} // 첫 번째 항목에만 ref를 할당하여 너비 측정
                     className={`carousel-item ${isActive ? 'active' : ''}`}
