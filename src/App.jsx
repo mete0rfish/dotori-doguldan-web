@@ -2,7 +2,9 @@ import { useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
 import Hero from './components/Hero'
-import GameCard from './components/GameCard'
+import ProjectPreview from './components/ProjectPreview'
+import History from './components/History'
+import BusinessInquiry from './components/BusinessInquiry'
 import GameDetail from './components/GameDetail'
 import Footer from './components/Footer'
 import { games } from './data/games'
@@ -23,17 +25,9 @@ function App() {
           <div className="app">
             <Header language={currentLanguage} onLanguageToggle={toggleLanguage} />
             <Hero language={currentLanguage} />
-
-            <section id="games-section" className="games-section">
-              {games.map((game) => (
-                <GameCard
-                  key={game.id}
-                  game={game}
-                  language={currentLanguage}
-                />
-              ))}
-            </section>
-
+            <ProjectPreview language={currentLanguage} />
+            <History language={currentLanguage} />
+            <BusinessInquiry language={currentLanguage} />
             <Footer language={currentLanguage} />
           </div>
         }

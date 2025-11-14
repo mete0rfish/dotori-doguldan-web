@@ -6,8 +6,8 @@ function Header({ language, onLanguageToggle }) {
   const location = useLocation()
   
   const menuItems = {
-    en: ['Home', 'Games'],
-    ko: ['홈', '게임']
+    en: ['Home', 'Game', 'Team'],
+    ko: ['Home', 'Game', 'Team']
   }
 
   const scrollToGamesSection = () => {
@@ -39,6 +39,7 @@ function Header({ language, onLanguageToggle }) {
     <header className="header">
       <div className="header-container">
         <div className="logo">
+          <span className="logo-icon">🐿️</span>
           <span className="logo-text">Dotori Doguldan</span>
         </div>
 

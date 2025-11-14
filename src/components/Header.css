@@ -20,13 +20,21 @@
 
 .logo {
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-icon {
+  font-size: 20px;
+  display: inline-block;
 }
 
 .logo-text {
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 2px;
-  color: #fa983a;
+  color: #ffffff;
   text-transform: uppercase;
 }
 
