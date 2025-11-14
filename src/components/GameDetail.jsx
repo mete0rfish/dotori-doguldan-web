@@ -4,6 +4,51 @@ import Header from './Header'
 import Footer from './Footer'
 import './GameDetail.css'
 
+function ScreenshotCarousel({ screenshots }) {
+  const [currentIndex, setCurrentIndex] = useState(0)
+
+  const handlePrev = () => {
+    setCurrentIndex((prev) => (prev === 0 ? screenshots.length - 1 : prev - 1))
+  }
+
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev === screenshots.length - 1 ? 0 : prev + 1))
+  }
+
+  return (
+    <div className="screenshots-carousel-container">
+      <button className="carousel-nav carousel-prev" onClick={handlePrev}>
+        ◀
+      </button>
+      <div className="screenshots-carousel-wrapper">
+        {screenshots.map((screenshot, index) => {
+          const offset = index - currentIndex
+          const isActive = offset === 0
+          const isLeft = offset < 0
+          const isRight = offset > 0
+
+          return (
+            <div
+              key={index}
+              className={`screenshot-carousel-item ${isActive ? 'active' : ''} ${isLeft ? 'left' : ''} ${isRight ? 'right' : ''}`}
+            >
+              <img 
+                src={screenshot} 
+                alt={`Screenshot ${index + 1}`}
+                className="screenshot-carousel-image"
+                loading="lazy"
+              />
+            </div>
+          )
+        })}
+      </div>
+      <button className="carousel-nav carousel-next" onClick={handleNext}>
+        ▶
+      </button>
+    </div>
+  )
+}
+
 function GameDetail({ games, language, onLanguageToggle }) {
   const { id } = useParams()
   const navigate = useNavigate()
@@ -63,14 +108,32 @@ function GameDetail({ games, language, onLanguageToggle }) {
       <Header language={language} onLanguageToggle={onLanguageToggle} />
       
       <div className="game-detail">
-        <div className="game-detail-hero" style={{ backgroundImage: `url(${game.image})` }}>
-          <div className="game-detail-overlay"></div>
+        <div className="game-detail-hero">
+          <div className="game-detail-hero-background"></div>
           <div className="game-detail-hero-content">
             <button className="back-button" onClick={() => navigate('/')}>
               ← {t.back}
             </button>
-            <h1 className="game-detail-logo">{game.logo}</h1>
-            <h2 className="game-detail-title">{title}</h2>
+            <div className="game-detail-hero-main">
+              <div className="game-detail-hero-left">
+                <h1 className="game-detail-logo">
+                  {game.logo.split('').map((char, index) => {
+                    const colors = ['#FF8C42', '#4ECB71', '#9B59B6', '#4ECB71', '#3498DB', '#9B59B6', '#FF6B9D', '#5DADE2']
+                    return (
+                      <span key={index} style={{ color: colors[index % colors.length] }}>
+                        {char}
+                      </span>
+                    )
+                  })}
+                </h1>
+                <h2 className="game-detail-title-ko">{game.titleKo}</h2>
+              </div>
+              <div className="game-detail-hero-right">
+                <div className="game-character-placeholder">
+                  {/* 캐릭터 이미지는 사용자가 나중에 추가할 예정 */}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -111,14 +174,9 @@ function GameDetail({ games, language, onLanguageToggle }) {
               <section className="game-detail-section">
                 <h3 className="section-title">{t.trailer}</h3>
                 <div className="trailer-container">
-                  <iframe
-                    className="trailer-video"
-                    src={detailInfo.trailer}
-                    title="Game Trailer"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  ></iframe>
+                  <div className="trailer-placeholder">
+                    유투브 트레일러 연결
+                  </div>
                 </div>
               </section>
             )}
@@ -127,18 +185,7 @@ function GameDetail({ games, language, onLanguageToggle }) {
             {detailInfo.screenshots && detailInfo.screenshots.length > 0 && (
               <section className="game-detail-section">
                 <h3 className="section-title">{t.screenshots}</h3>
-                <div className="screenshots-grid">
-                  {detailInfo.screenshots.map((screenshot, index) => (
-                    <div key={index} className="screenshot-item">
-                      <img 
-                        src={screenshot} 
-                        alt={`Screenshot ${index + 1}`}
-                        className="screenshot-image"
-                        loading="lazy"
-                      />
-                    </div>
-                  ))}
-                </div>
+                <ScreenshotCarousel screenshots={detailInfo.screenshots} />
               </section>
             )}
           </div>
