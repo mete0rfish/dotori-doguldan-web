@@ -109,7 +109,10 @@ function GameDetail({ games, language, onLanguageToggle }) {
       
       <div className="game-detail">
         <div className="game-detail-hero">
-          <div className="game-detail-hero-background"></div>
+          <div 
+            className="game-detail-hero-background" 
+            style={{ backgroundImage: `url(${game.image})` }}
+          ></div>
           <div className="game-detail-hero-content">
             <button className="back-button" onClick={() => navigate('/')}>
               ← {t.back}
@@ -118,9 +121,8 @@ function GameDetail({ games, language, onLanguageToggle }) {
               <div className="game-detail-hero-left">
                 <h1 className="game-detail-logo">
                   {game.logo.split('').map((char, index) => {
-                    const colors = ['#FF8C42', '#4ECB71', '#9B59B6', '#4ECB71', '#3498DB', '#9B59B6', '#FF6B9D', '#5DADE2']
                     return (
-                      <span key={index} style={{ color: colors[index % colors.length] }}>
+                      <span key={index}>
                         {char}
                       </span>
                     )
@@ -129,9 +131,7 @@ function GameDetail({ games, language, onLanguageToggle }) {
                 <h2 className="game-detail-title-ko">{game.titleKo}</h2>
               </div>
               <div className="game-detail-hero-right">
-                <div className="game-character-placeholder">
-                  {/* 캐릭터 이미지는 사용자가 나중에 추가할 예정 */}
-                </div>
+                {/* 캐릭터 이미지는 사용자가 나중에 추가할 예정 */}
               </div>
             </div>
           </div>
