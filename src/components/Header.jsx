@@ -1,5 +1,6 @@
 import { useNavigate, useLocation } from 'react-router-dom'
 import './Header.css'
+import logo from '../img/logo_black.png'
 
 function Header({ language, onLanguageToggle }) {
   const navigate = useNavigate()
@@ -39,7 +40,9 @@ function Header({ language, onLanguageToggle }) {
     <header className="header">
       <div className="header-container">
         <div className="logo">
-          <span className="logo-icon">🐿️</span>
+          <span className="logo-icon">
+            <img src={logo} alt="Dotori Doguldan" />
+          </span>
           <span className="logo-text">Dotori Doguldan</span>
         </div>
 
