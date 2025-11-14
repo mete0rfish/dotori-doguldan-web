@@ -16,10 +16,10 @@ function Header({ language, onLanguageToggle }) {
     ko: '도토리 도굴단'
   }
 
-  const scrollToGamesSection = () => {
-    const gamesSection = document.getElementById('games-section')
-    if (gamesSection) {
-      gamesSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  const scrollToProjectPriview = () => {
+    const projectPreview = document.getElementById('project-preview')
+    if (projectPreview) {
+      projectPreview.scrollIntoView({ behavior: 'smooth', block: 'start' })
     }
   }
 
@@ -30,12 +30,12 @@ function Header({ language, onLanguageToggle }) {
       // 게임 버튼 클릭 시 메인 페이지로 이동 후 게임 섹션으로 스크롤
       if (location.pathname === '/') {
         // 이미 메인 페이지에 있으면 바로 스크롤
-        scrollToGamesSection()
+        scrollToProjectPriview()
       } else {
         // 다른 페이지에 있으면 메인 페이지로 이동 후 스크롤
         navigate('/')
         setTimeout(() => {
-          scrollToGamesSection()
+          scrollToProjectPriview()
         }, 100)
       }
     }
