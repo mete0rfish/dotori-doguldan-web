@@ -4,12 +4,12 @@ import { FaReddit, FaXTwitter, FaYoutube, FaDiscord, FaInstagram, FaSteam } from
 
 function Footer({ language }) {
   const socialLinks = [
-    { name: 'Reddit', icon: FaReddit, color: '#FF4500' },
-    { name: 'X', icon: FaXTwitter, color: '#000000' },
-    { name: 'YouTube', icon: FaYoutube, color: '#FF0000' },
-    { name: 'Discord', icon: FaDiscord, color: '#5865F2' },
-    { name: 'Instagram', icon: FaInstagram, color: '#E4405F' },
-    { name: 'Steam', icon: FaSteam, color: '#1B2838' }
+    { name: 'Reddit', icon: FaReddit, color: '#FF4500', url: 'https://www.reddit.com/user/dotori-doguldan' },
+    { name: 'X', icon: FaXTwitter, color: '#000000', url: 'https://twitter.com/dotori_doguldan' },
+    { name: 'YouTube', icon: FaYoutube, color: '#FF0000', url: 'https://www.youtube.com/@dotori-doguldan' },
+    { name: 'Discord', icon: FaDiscord, color: '#5865F2', url: 'https://discord.gg/dotori-doguldan' },
+    { name: 'Instagram', icon: FaInstagram, color: '#E4405F', url: 'https://www.instagram.com/dotori_doguldan' },
+    { name: 'Steam', icon: FaSteam, color: '#1B2838', url: 'https://store.steampowered.com/developer/dotori-doguldan' }
   ]
 
   return (
@@ -28,7 +28,9 @@ function Footer({ language }) {
             return (
               <a
                 key={index}
-                href="#"
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="social-icon"
                 style={{ '--social-color': social.color }}
                 aria-label={social.name}
