@@ -133,15 +133,11 @@
 
 /* 버튼 위치 조정: 래퍼(500px)의 바깥쪽에 배치 */
 .carousel-container .carousel-prev {
-  left: 50%;
-  /* 래퍼 너비 절반 (500px) + 버튼 너비 (50px) + 추가 마진 (20px) */
-  margin-left: calc(-500px - 50px - 20px); 
+  left: 20px; /* 컨테이너 왼쪽 가장자리에서 20px 안쪽으로 이동 */
 }
 
 .carousel-container .carousel-next {
-  right: 50%;
-  /* 래퍼 너비 절반 (500px) + 버튼 너비 (50px) + 추가 마진 (20px) */
-  margin-right: calc(-500px - 50px - 20px);
+  right: 20px; /* 컨테이너 오른쪽 가장자리에서 20px 안쪽으로 이동 */
 }
 
 /* -------------------------------------- */
@@ -154,9 +150,9 @@
   .carousel-item { width: 250px; }
   .carousel-nav { width: 40px; height: 40px; font-size: 16px; }
   
-  /* 버튼 위치 재조정 (새 래퍼 너비 350px 기준) */
-  .carousel-container .carousel-prev { margin-left: calc(-175px - 40px - 10px); }
-  .carousel-container .carousel-next { margin-right: calc(-175px - 40px - 10px); }
+  .carousel-container .carousel-next {
+    right: 10px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -166,6 +162,10 @@
   .carousel-nav { width: 35px; height: 35px; font-size: 14px; }
 
   /* 버튼 위치 재조정 (새 래퍼 너비 300px 기준) */
-  .carousel-container .carousel-prev { margin-left: calc(-150px - 35px - 10px); }
-  .carousel-container .carousel-next { margin-right: calc(-150px - 35px - 10px); }
+  .carousel-container .carousel-prev {
+    left: 10px;
+  }
+  .carousel-container .carousel-next {
+    right: 10px;
+  }
 }
