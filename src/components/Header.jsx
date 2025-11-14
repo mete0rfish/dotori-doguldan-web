@@ -11,6 +11,11 @@ function Header({ language, onLanguageToggle }) {
     ko: ['Home', 'Game', 'Team']
   }
 
+  const logoText = {
+    en: 'Dotori Doguldan',
+    ko: '도토리 도굴단'
+  }
+
   const scrollToGamesSection = () => {
     const gamesSection = document.getElementById('games-section')
     if (gamesSection) {
@@ -43,7 +48,7 @@ function Header({ language, onLanguageToggle }) {
           <span className="logo-icon">
             <img src={logo} alt="Dotori Doguldan" />
           </span>
-          <span className="logo-text">Dotori Doguldan</span>
+          <span className="logo-text">{logoText[language]}</span>
         </div>
 
         <nav className="nav">

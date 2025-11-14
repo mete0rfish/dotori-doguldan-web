@@ -23,11 +23,11 @@ function BusinessInquiry({ language }) {
 
   const labels = {
     en: {
-      title: '비즈니스 문의',
-      email: '메일',
-      subject: '제목',
-      content: '내용',
-      submit: '전송'
+      title: 'Business Inquiry',
+      email: 'Email Address',
+      subject: 'Title',
+      content: 'Contents',
+      submit: 'Submit'
     },
     ko: {
       title: '비즈니스 문의',

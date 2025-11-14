@@ -4,15 +4,15 @@ import logo from '../img/logo_black.png'
 function Hero({ language }) {
   const content = {
     en: {
-      studioName: '도토리 도굴단',
-      subtitle: '재미의 본질을 발굴합니다.',
+      studioName: 'Dotori Doguldan',
+      subtitle: 'Unearthing the essence of fun.',
       description: [
-        '도토리도굴단은 게임과 예술을 사랑하는 네 명이 활동 중인 인디 게임 개발 팀입니다.',
-        '우리는 게임이 줄 수 있는 경험에 대해 끊임없이 고민하며, 더 재미있고 의미 있는 플레이 경험을 만들기 위해 노력합니다.'
+        'Dotori Doguldan is an indie game development team of four people who love games and art.',
+        'We constantly think about the experiences games can provide, and strive to create more fun and meaningful play experiences.'
       ],
-      cta: '게임 둘러보기',
+      cta: 'Browse Games',
       developing: 'Now Developing ...',
-      trailerPlaceholder: '유투브 트레일러 연결'
+      trailerPlaceholder: 'YouTube Trailer Link'
     },
     ko: {
       studioName: '도토리 도굴단',
