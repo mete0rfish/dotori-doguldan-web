@@ -4,12 +4,12 @@ import { FaReddit, FaXTwitter, FaYoutube, FaDiscord, FaInstagram, FaSteam } from
 
 function Footer({ language }) {
   const socialLinks = [
-    { name: 'Reddit', icon: FaReddit, color: '#FF4500', url: 'https://www.reddit.com/user/dotori-doguldan' },
-    { name: 'X', icon: FaXTwitter, color: '#000000', url: 'https://twitter.com/dotori_doguldan' },
-    { name: 'YouTube', icon: FaYoutube, color: '#FF0000', url: 'https://www.youtube.com/@dotori-doguldan' },
-    { name: 'Discord', icon: FaDiscord, color: '#5865F2', url: 'https://discord.gg/dotori-doguldan' },
-    { name: 'Instagram', icon: FaInstagram, color: '#E4405F', url: 'https://www.instagram.com/dotori_doguldan' },
-    { name: 'Steam', icon: FaSteam, color: '#1B2838', url: 'https://store.steampowered.com/developer/dotori-doguldan' }
+    { name: 'Reddit', icon: FaReddit, color: '#FF4500', url: 'https://www.reddit.com/user/Dotori_Doguldan/' },
+    { name: 'X', icon: FaXTwitter, color: '#000000', url: 'https://x.com/DotoriDoguldan' },
+    { name: 'YouTube', icon: FaYoutube, color: '#FF0000', url: 'https://youtube.com/channel/UC2a5OHL83WrN4ipVYJUfnLA?si=V_1xMDM-r6X8wvAw' },
+    { name: 'Discord', icon: FaDiscord, color: '#5865F2', url: 'https://discord.gg/UBvctzfsVA' },
+    { name: 'Instagram', icon: FaInstagram, color: '#E4405F', url: 'https://www.instagram.com/dotoridoguldan/' },
+    { name: 'Steam', icon: FaSteam, color: '#1B2838', url: 'https://steamcommunity.com/groups/DotoriDoguldan' }
   ]
 
   return (
