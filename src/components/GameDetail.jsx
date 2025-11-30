@@ -178,9 +178,17 @@ function GameDetail({ games, language, onLanguageToggle }) {
               <section className="game-detail-section">
                 <h3 className="section-title">{t.trailer}</h3>
                 <div className="trailer-container">
-                  <div className="trailer-placeholder">
-                    유투브 트레일러 연결
-                  </div>
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    src={detailInfo.trailer}
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                    style={{ border: 'none' }}
+                  ></iframe>
                 </div>
               </section>
             )}
