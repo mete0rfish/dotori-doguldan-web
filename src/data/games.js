@@ -2,6 +2,21 @@ import hamstoryThumbnail from '../img/hamstory_thumnail.png';
 import horropsThumbnail from '../img/horrops_thumnail.png';
 import nunsaramThumbnail from '../img/nunsaram_thumnail.png';
 
+// Hamstory screenshots
+import hamstoryScreenshot1 from '../img/preview/hamstory/storepage_screenshot_1.jpg';
+import hamstoryScreenshot2 from '../img/preview/hamstory/storepage_screenshot_2.jpg';
+import hamstoryScreenshot3 from '../img/preview/hamstory/storepage_screenshot_3.jpg';
+import hamstoryScreenshot4 from '../img/preview/hamstory/storepage_screenshot_4.jpg';
+import hamstoryScreenshot5 from '../img/preview/hamstory/storepage_screenshot_5.jpg';
+import hamstoryScreenshot6 from '../img/preview/hamstory/storepage_screenshot_6.JPG';
+import hamstoryScreenshot7 from '../img/preview/hamstory/storepage_screenshot_7.JPG';
+import hamstoryScreenshot8 from '../img/preview/hamstory/storepage_screenshot_8.JPG';
+import hamstoryScreenshot9 from '../img/preview/hamstory/storepage_screenshot_9.JPG';
+import hamstoryScreenshot10 from '../img/preview/hamstory/storepage_screenshot_10.JPG';
+import hamstoryScreenshot11 from '../img/preview/hamstory/storepage_screenshot_11.JPG';
+import hamstoryScreenshot12 from '../img/preview/hamstory/storepage_screenshot_12.JPG';
+import hamstoryScreenshot13 from '../img/preview/hamstory/storepage_screenshot_13.JPG';
+
 export const games = [
   {
     id: 1,
@@ -34,9 +49,19 @@ export const games = [
       },
       trailer: 'https://www.youtube.com/embed/f_EXMft1nsg?si=mijd-LFe_2oEnJMr',
       screenshots: [
-        'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4008550/3252afa251539d9c3435c262ce2c451518efaac8/header.jpg?t=1762790025',
-        'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4008550/3252afa251539d9c3435c262ce2c451518efaac8/header.jpg?t=1762790025',
-        'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4008550/3252afa251539d9c3435c262ce2c451518efaac8/header.jpg?t=1762790025'
+        hamstoryScreenshot1,
+        hamstoryScreenshot2,
+        hamstoryScreenshot3,
+        hamstoryScreenshot4,
+        hamstoryScreenshot5,
+        hamstoryScreenshot6,
+        hamstoryScreenshot7,
+        hamstoryScreenshot8,
+        hamstoryScreenshot9,
+        hamstoryScreenshot10,
+        hamstoryScreenshot11,
+        hamstoryScreenshot12,
+        hamstoryScreenshot13
       ]
     }
   },
