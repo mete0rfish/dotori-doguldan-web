@@ -47,7 +47,7 @@ export const games = [
           '계절이 살아있는 세계'
         ]
       },
-      trailer: 'https://www.youtube.com/embed/f_EXMft1nsg?si=mijd-LFe_2oEnJMr',
+      trailer: 'https://www.youtube.com/embed/tnpF9C6B9rE?si=lQHpS_WRyb8X4vny',
       screenshots: [
         hamstoryScreenshot1,
         hamstoryScreenshot2,
