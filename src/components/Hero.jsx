@@ -2,6 +2,8 @@ import './Hero.css'
 import logo from '../img/logo_black.png'
 
 function Hero({ language }) {
+  const youtubeVideoId = 'tnpF9C6B9rE'
+
   const content = {
     en: {
       studioName: 'Dotori Doguldan',
@@ -55,7 +57,20 @@ function Hero({ language }) {
         </button>
         <p className="hero-developing">{text.developing}</p>
         <div className="hero-trailer">
-          <div className="trailer-placeholder">{text.trailerPlaceholder}</div>
+          {youtubeVideoId ? (
+            <iframe
+              width="100%"
+              height="100%"
+              src={`https://www.youtube.com/embed/${youtubeVideoId}`}
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              style={{ border: 'none' }}
+            ></iframe>
+          ) : (
+            <div className="trailer-placeholder">{text.trailerPlaceholder}</div>
+          )}
         </div>
       </div>
     </section>
